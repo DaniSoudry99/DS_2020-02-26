@@ -1,0 +1,111 @@
+<?php
+
+  /**
+   *Classe de menu
+   *@author Daniel SOUDRY
+   */
+  class menu
+  {
+    /**
+     *Id du menu
+     */
+    private $idMenu;
+    /**
+     *Jour du menu
+     */
+    private $jourMenu;
+    /**
+     *Plat du menu
+     */
+    private $platMenu;
+    /**
+     *Photo du menu
+     */
+    private $photoMenu;
+
+    /**
+     *Constructeur de la classe menu
+     *@return object
+     */
+    function __construct($unJour, $unPlat, $unePhoto, $unId=0)
+    {
+      $this->idMenu = $unId;
+      $this->jourMenu = $unJour;
+      $this->platMenu = $unPlat;
+      $this->photoMenu = $unePhoto;
+    }
+
+    /**
+     *Retourne l'id du menu
+     *@return int
+     */
+    public function getIdMenuDs()
+    {
+        return $this->idMenu;
+    }
+
+    /**
+     *Retourne le jour du menu
+     *@return string
+     */
+    public function getJourMenuDs()
+    {
+        return $this->jourMenu;
+    }
+
+    /**
+     *Modifie le jour du menu
+     *@return string
+     */
+    public function setJourMenuDs($jourMenu)
+    {
+        $this->jourMenu = $jourMenu;
+
+        return $this;
+    }
+
+    /**
+     *Retourne le plat du menu
+     *@return string
+     */
+    public function getPlatMenuDs()
+    {
+        return $this->platMenu;
+    }
+
+    /**
+     *Modifie le plat du menu
+     *@return string
+     */
+    public function setPlatMenuDs($platMenu)
+    {
+        $this->platMenu = $platMenu;
+
+        return $this;
+    }
+
+    /**
+     *Retourne la photo du menu
+     *@return string
+     */
+    public function getPhotoMenuDs()
+    {
+        return $this->photoMenu;
+    }
+
+    /**
+     *Modifie la photo du menu
+     *@return string
+     */
+    public function setPhotoMenuDs($photoMenu)
+    {
+        $this->photoMenu = $photoMenu;
+
+        return $this;
+    }
+
+}
+
+
+
+?>

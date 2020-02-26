@@ -1,0 +1,88 @@
+<?php
+
+  /**
+   *Classe de Fonctions Static
+   *@author Daniel SOUDRY
+   */
+  class fonctionsUtils
+  {
+
+    /**
+     *Activation de la connexion à la base de données (retourne un objet de la classe PDO)
+     *@return object
+     */
+    static function activeCnx()
+    {
+      if (file_exists('utils/autoloader.php'))
+      {
+        require 'utils/autoloader.php';
+      }
+      else
+      {
+        if (file_exists('../utils/autoloader.php'))
+        {
+          require '../utils/autoloader.php';
+        }
+      }
+
+      Autoloader::register();
+      $dbh = Connexion::seConnecter();
+      $cnx = $dbh->getCnx();
+
+      return $cnx;
+    }
+
+    /**
+     *Renvoie le jour courant
+     *@return string
+     */
+    static function dateAujd()
+    {
+      date_default_timezone_set('Europe/Paris');
+      $dateJour = date('d');
+      $dateMois = date('m');
+      $dateAnnee = date('Y');
+
+      $timestamp = mktime(0, 0, 0, $dateMois, $dateJour, $dateAnnee);
+      $dateEn = date('D', $timestamp);
+
+      switch ($dateEn)
+      {
+        case 'Mon':
+          $dateFr = 'Lundi';
+          break;
+        case 'Tue':
+          $dateFr = 'Mardi';
+          break;
+        case 'Wed':
+          $dateFr = 'Mercredi';
+          break;
+        case 'Thu':
+          $dateFr = 'Jeudi';
+          break;
+        case 'Fri':
+          $dateFr = 'Vendredi';
+          break;
+        case 'Sat':
+          $dateFr = 'Samedi';
+          break;
+        case 'Sun':
+          $dateFr = 'Dimanche';
+          break;
+
+        default:
+          // code...
+          break;
+      }
+
+      return $dateFr;
+    }
+
+  }
+
+
+
+
+
+?>
+

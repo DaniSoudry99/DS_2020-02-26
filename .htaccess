@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^accueil$ controller/c_accueil.php
+RewriteRule ^menu$ controller/c_menu.php
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
